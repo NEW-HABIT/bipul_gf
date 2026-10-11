@@ -112,33 +112,33 @@ export const BirthdayLetter: React.FC = () => {
           >
             <div
               onClick={handleOpenLetter}
-              className="group relative cursor-pointer w-full max-w-md h-64 sm:h-72 rounded-3xl bg-gradient-to-br from-[#2a1744] via-[#1f1035] to-[#120824] border border-pink-400/30 p-8 shadow-2xl box-glow flex flex-col items-center justify-between hover:scale-105 transition-all duration-300"
+              className="group relative cursor-pointer w-full max-w-[280px] xs:max-w-xs sm:max-w-md h-56 sm:h-72 rounded-3xl bg-gradient-to-br from-[#2a1744] via-[#1f1035] to-[#120824] border border-pink-400/30 p-5 sm:p-8 shadow-2xl box-glow flex flex-col items-center justify-between hover:scale-105 active:scale-95 transition-all duration-300"
             >
               {/* Envelope flap aesthetic */}
               <div
-                className="absolute top-0 inset-x-0 h-28 bg-[#371d5b] border-b border-pink-300/30 rounded-t-3xl flex justify-center items-end pb-3"
+                className="absolute top-0 inset-x-0 h-24 sm:h-28 bg-[#371d5b] border-b border-pink-300/30 rounded-t-3xl flex justify-center items-end pb-2 sm:pb-3"
                 style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}
               />
 
               {/* Wax Heart Seal */}
-              <div className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-tr from-blush-600 to-rose-400 border-2 border-pink-200 shadow-xl shadow-blush-500/50 flex items-center justify-center group-hover:scale-115 transition-transform">
-                <Heart className="w-8 h-8 text-white fill-white animate-pulse" />
+              <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-blush-600 to-rose-400 border-2 border-pink-200 shadow-xl shadow-blush-500/50 flex items-center justify-center group-hover:scale-115 transition-transform">
+                <Heart className="w-7 h-7 sm:w-8 sm:h-8 text-white fill-white animate-pulse" />
               </div>
 
               {/* Envelope Label */}
               <div className="relative z-10 text-center">
-                <h3 className="font-handwriting text-3xl sm:text-4xl text-pink-100 font-bold mb-1">
+                <h3 className="font-handwriting text-2xl xs:text-3xl sm:text-4xl text-pink-100 font-bold mb-1">
                   {BIRTHDAY_CONFIG.letter.envelopeLabel}
                 </h3>
-                <p className="text-xs uppercase tracking-widest text-pink-200/60 font-mono">
+                <p className="text-[10px] xs:text-xs uppercase tracking-widest text-pink-200/60 font-mono">
                   Click to Break Seal & Read
                 </p>
               </div>
 
               {/* Button */}
-              <div className="relative z-10 w-full pt-3 border-t border-pink-300/15">
-                <span className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-full bg-blush-500/20 group-hover:bg-blush-500 text-pink-200 group-hover:text-white text-sm font-medium transition-colors">
-                  <Sparkles className="w-4 h-4 text-pink-300" />
+              <div className="relative z-10 w-full pt-2.5 sm:pt-3 border-t border-pink-300/15">
+                <span className="inline-flex items-center justify-center gap-1.5 sm:gap-2 w-full py-2 sm:py-2.5 rounded-full bg-blush-500/20 group-hover:bg-blush-500 text-pink-200 group-hover:text-white text-xs sm:text-sm font-medium transition-colors">
+                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-300" />
                   <span>Open Letter</span>
                 </span>
               </div>
@@ -151,7 +151,7 @@ export const BirthdayLetter: React.FC = () => {
             initial={{ opacity: 0, y: 30, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="letter-paper rounded-3xl p-6 sm:p-12 md:p-16 max-w-2xl mx-auto shadow-2xl border border-pink-200/80 text-gray-800 relative overflow-hidden"
+            className="letter-paper rounded-3xl p-5 xs:p-7 sm:p-12 md:p-16 max-w-2xl mx-auto shadow-2xl border border-pink-200/80 text-gray-800 relative overflow-hidden"
           >
             {/* Subtle corner floral decorations */}
             <div className="absolute top-4 left-4 text-pink-300/40 select-none">🌸</div>

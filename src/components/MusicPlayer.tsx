@@ -92,7 +92,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({
   }, [isMusicPlaying]);
 
   return (
-    <div className="fixed bottom-5 right-4 sm:right-6 z-40 select-none">
+    <div className="fixed bottom-3.5 right-3 sm:bottom-5 sm:right-6 z-40 select-none max-w-[calc(100vw-24px)]">
       {/* Hidden Audio Element pointing to local asset */}
       <audio
         ref={audioRef}
@@ -103,32 +103,32 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({
 
       <motion.div
         layout
-        className="glass-panel rounded-full p-2 sm:p-2.5 border border-pink-300/30 shadow-2xl flex items-center gap-2 sm:gap-3 box-glow backdrop-blur-lg"
+        className="glass-panel rounded-full p-1.5 sm:p-2.5 border border-pink-300/30 shadow-2xl flex items-center gap-1.5 sm:gap-3 box-glow backdrop-blur-lg"
       >
         {/* Play / Pause Main Button */}
         <button
           onClick={onTogglePlay}
-          className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-r from-blush-500 to-rose-500 hover:from-blush-600 hover:to-rose-600 text-white flex items-center justify-center shadow-lg transition-all hover:scale-105 active:scale-95"
+          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-r from-blush-500 to-rose-500 hover:from-blush-600 hover:to-rose-600 text-white flex items-center justify-center shadow-lg transition-all hover:scale-105 active:scale-95"
           aria-label={isMusicPlaying ? "Pause music" : "Play music"}
         >
           {isMusicPlaying ? (
-            <Pause className="w-5 h-5 fill-white text-white" />
+            <Pause className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-white" />
           ) : (
-            <Play className="w-5 h-5 fill-white text-white ml-0.5" />
+            <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-white ml-0.5" />
           )}
         </button>
 
         {/* Visualizer & Song Info (Click to expand controls) */}
         <div
           onClick={() => setIsExpanded((prev) => !prev)}
-          className="flex items-center gap-2 sm:gap-3 cursor-pointer pr-1"
+          className="flex items-center gap-1.5 sm:gap-3 cursor-pointer pr-1"
         >
           {/* Animated EQ Bars */}
-          <div className="flex items-end gap-0.5 h-5 w-5 justify-center">
+          <div className="flex items-end gap-0.5 h-4 sm:h-5 w-4 sm:w-5 justify-center">
             {[0.4, 0.9, 0.6, 0.8].map((factor, i) => (
               <span
                 key={i}
-                className="w-1 bg-blush-400 rounded-full transition-all duration-300"
+                className="w-0.5 sm:w-1 bg-blush-400 rounded-full transition-all duration-300"
                 style={{
                   height: isMusicPlaying ? `${Math.max(20, factor * 100)}%` : '20%',
                   animation: isMusicPlaying ? `pulse 1.${i + 2}s infinite ease-in-out` : 'none',
@@ -138,12 +138,12 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({
           </div>
 
           {/* Song Title Text */}
-          <div className="hidden xs:block text-left max-w-[130px] sm:max-w-[170px] truncate">
-            <p className="text-xs font-medium text-pink-100 truncate">
+          <div className="text-left max-w-[100px] xs:max-w-[130px] sm:max-w-[170px] truncate">
+            <p className="text-[11px] sm:text-xs font-medium text-pink-100 truncate">
               {usingSynthesizer ? "Music Box Melody" : BIRTHDAY_CONFIG.music.songTitle}
             </p>
-            <p className="text-[10px] text-pink-300/60 truncate">
-              {isMusicPlaying ? "Playing Birthday Magic ♫" : "Tap to Play ♫"}
+            <p className="text-[9px] sm:text-[10px] text-pink-300/60 truncate">
+              {isMusicPlaying ? "Playing Magic ♫" : "Tap for Magic ♫"}
             </p>
           </div>
         </div>

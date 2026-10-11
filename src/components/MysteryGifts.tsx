@@ -148,12 +148,12 @@ export const MysteryGifts: React.FC<MysteryGiftsProps> = ({ onGoToLetter }) => {
               exit={{ scale: 0.9, y: 20, opacity: 0 }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-lg w-full glass-panel rounded-3xl p-6 sm:p-8 border border-pink-300/40 shadow-2xl box-glow"
+              className="relative max-w-lg w-full glass-panel rounded-3xl p-5 xs:p-6 sm:p-8 border border-pink-300/40 shadow-2xl box-glow max-h-[85vh] overflow-y-auto"
             >
               {/* Close Button */}
               <button
                 onClick={() => setOpenedGift(null)}
-                className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-pink-200 hover:text-white transition-colors"
+                className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-pink-200 hover:text-white transition-colors"
                 aria-label="Close Surprise Modal"
               >
                 <X className="w-5 h-5" />
@@ -162,21 +162,21 @@ export const MysteryGifts: React.FC<MysteryGiftsProps> = ({ onGoToLetter }) => {
               {/* Gift 1 Content */}
               {openedGift === 1 && (
                 <div className="text-center pt-2">
-                  <div className="w-16 h-16 rounded-full bg-blush-500/20 border border-blush-400/30 flex items-center justify-center mx-auto mb-5">
-                    <Heart className="w-8 h-8 text-blush-400 fill-blush-400 animate-pulse" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-blush-500/20 border border-blush-400/30 flex items-center justify-center mx-auto mb-4 sm:mb-5">
+                    <Heart className="w-7 h-7 sm:w-8 sm:h-8 text-blush-400 fill-blush-400 animate-pulse" />
                   </div>
-                  <span className="text-xs uppercase tracking-widest text-pink-200/60 font-mono">
+                  <span className="text-[11px] xs:text-xs uppercase tracking-widest text-pink-200/60 font-mono">
                     Surprise No. 1
                   </span>
-                  <h3 className="font-handwriting text-3xl sm:text-4xl text-pink-200 font-bold mb-4">
+                  <h3 className="font-handwriting text-2xl xs:text-3xl sm:text-4xl text-pink-200 font-bold mb-3 sm:mb-4">
                     A Little Compliment
                   </h3>
-                  <p className="font-serif italic text-lg sm:text-xl text-cream-100 leading-relaxed max-w-md mx-auto mb-6">
+                  <p className="font-serif italic text-base xs:text-lg sm:text-xl text-cream-100 leading-relaxed max-w-md mx-auto mb-6">
                     “Your smile has this gentle, effortless way of brightening every room it enters. Never change the kindness, warmth, and grace you bring to the world.”
                   </p>
                   <button
                     onClick={() => setOpenedGift(null)}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-blush-500 text-white text-sm font-medium hover:bg-blush-600 transition-colors shadow-lg"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-blush-500 text-white text-sm font-medium hover:bg-blush-600 transition-colors shadow-lg active:scale-95"
                   >
                     <span>Keep in my heart 💗</span>
                   </button>
@@ -186,18 +186,18 @@ export const MysteryGifts: React.FC<MysteryGiftsProps> = ({ onGoToLetter }) => {
               {/* Gift 2 Content */}
               {openedGift === 2 && (
                 <div className="text-center pt-2">
-                  <div className="w-16 h-16 rounded-full bg-purple-500/20 border border-purple-400/30 flex items-center justify-center mx-auto mb-4">
-                    <ImageIcon className="w-8 h-8 text-purple-300" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-purple-500/20 border border-purple-400/30 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <ImageIcon className="w-7 h-7 sm:w-8 sm:h-8 text-purple-300" />
                   </div>
-                  <span className="text-xs uppercase tracking-widest text-pink-200/60 font-mono">
+                  <span className="text-[11px] xs:text-xs uppercase tracking-widest text-pink-200/60 font-mono">
                     Surprise No. 2
                   </span>
-                  <h3 className="font-handwriting text-3xl sm:text-4xl text-pink-200 font-bold mb-4">
+                  <h3 className="font-handwriting text-2xl xs:text-3xl sm:text-4xl text-pink-200 font-bold mb-3 sm:mb-4">
                     A Treasured Moment
                   </h3>
 
                   {/* Polaroid Frame of Photo */}
-                  <div className="polaroid-card max-w-xs mx-auto mb-4 rounded-xl shadow-xl">
+                  <div className="polaroid-card max-w-[210px] xs:max-w-[240px] sm:max-w-xs mx-auto mb-3 sm:mb-4 rounded-xl shadow-xl p-2.5 sm:p-4">
                     <div className="aspect-[4/5] rounded overflow-hidden bg-gray-100">
                       <img
                         src="/images/popy-01.jpg"
@@ -205,18 +205,18 @@ export const MysteryGifts: React.FC<MysteryGiftsProps> = ({ onGoToLetter }) => {
                         className="w-full h-full object-cover object-center"
                       />
                     </div>
-                    <p className="font-handwriting text-xl text-gray-800 font-bold mt-2">
+                    <p className="font-handwriting text-lg sm:text-xl text-gray-800 font-bold mt-2">
                       Always Radiant ✨
                     </p>
                   </div>
 
-                  <p className="font-serif italic text-sm text-pink-100/90 mb-5">
+                  <p className="font-serif italic text-xs sm:text-sm text-pink-100/90 mb-4 sm:mb-5">
                     “A beautiful photograph of a wonderful soul.”
                   </p>
 
                   <button
                     onClick={() => setOpenedGift(null)}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors shadow-lg"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-purple-600 text-white text-sm font-medium hover:bg-purple-700 transition-colors shadow-lg active:scale-95"
                   >
                     <span>Close Keepsake</span>
                   </button>
@@ -226,33 +226,33 @@ export const MysteryGifts: React.FC<MysteryGiftsProps> = ({ onGoToLetter }) => {
               {/* Gift 3 Content */}
               {openedGift === 3 && (
                 <div className="text-center pt-2">
-                  <div className="w-16 h-16 rounded-full bg-amber-500/20 border border-amber-400/30 flex items-center justify-center mx-auto mb-4">
-                    <Sparkles className="w-8 h-8 text-amber-300 animate-spin-slow" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-amber-500/20 border border-amber-400/30 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-amber-300 animate-spin-slow" />
                   </div>
-                  <span className="text-xs uppercase tracking-widest text-pink-200/60 font-mono">
+                  <span className="text-[11px] xs:text-xs uppercase tracking-widest text-pink-200/60 font-mono">
                     Surprise No. 3
                   </span>
-                  <h3 className="font-handwriting text-3xl sm:text-4xl text-pink-200 font-bold mb-4">
+                  <h3 className="font-handwriting text-2xl xs:text-3xl sm:text-4xl text-pink-200 font-bold mb-3 sm:mb-4">
                     Something From The Heart
                   </h3>
-                  <p className="font-serif italic text-lg sm:text-xl text-cream-100 leading-relaxed max-w-md mx-auto mb-6">
+                  <p className="font-serif italic text-base xs:text-lg sm:text-xl text-cream-100 leading-relaxed max-w-md mx-auto mb-5 sm:mb-6">
                     “Some feelings and warm wishes are meant to be cherished gently in words written just for you.”
                   </p>
 
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3">
                     <button
                       onClick={() => {
                         setOpenedGift(null);
                         onGoToLetter();
                       }}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blush-500 to-rose-600 text-white text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blush-500 to-rose-600 text-white text-sm font-semibold hover:shadow-lg active:scale-95 transition-all"
                     >
                       <span>Read Birthday Letter</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => setOpenedGift(null)}
-                      className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-pink-200 text-sm font-medium transition-colors"
+                      className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-pink-200 text-sm font-medium transition-colors"
                     >
                       Close for now
                     </button>

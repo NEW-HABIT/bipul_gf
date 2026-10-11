@@ -133,12 +133,12 @@ export const WishesSky: React.FC = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
                 transition={{ duration: 0.35, ease: 'easeOut' }}
-                className="absolute inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 bottom-6 sm:bottom-12 max-w-md w-full glass-panel rounded-2xl p-6 sm:p-7 border border-pink-300/40 shadow-2xl box-glow z-30"
+                className="absolute inset-x-3 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 bottom-3 sm:bottom-8 max-w-md w-auto sm:w-full glass-panel rounded-2xl p-4 xs:p-5 sm:p-7 border border-pink-300/40 shadow-2xl box-glow z-30 max-h-[75vh] overflow-y-auto"
               >
-                <div className="flex justify-between items-start mb-3">
+                <div className="flex justify-between items-start mb-2 sm:mb-3">
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl">{activeWish.emoji}</span>
-                    <h3 className="font-serif text-xl sm:text-2xl text-pink-100 font-semibold">
+                    <span className="text-xl sm:text-2xl">{activeWish.emoji}</span>
+                    <h3 className="font-serif text-lg xs:text-xl sm:text-2xl text-pink-100 font-semibold">
                       {activeWish.title}
                     </h3>
                   </div>
@@ -151,20 +151,37 @@ export const WishesSky: React.FC = () => {
                   </button>
                 </div>
 
-                <p className="font-serif italic text-base sm:text-lg text-cream-100 leading-relaxed my-3">
+                <p className="font-serif italic text-sm xs:text-base sm:text-lg text-cream-100 leading-relaxed my-2 sm:my-3">
                   “{activeWish.message}”
                 </p>
 
-                <div className="flex items-center justify-between pt-3 border-t border-pink-300/15 text-xs text-pink-200/60 font-light">
+                <div className="flex items-center justify-between pt-2.5 border-t border-pink-300/15 text-[11px] xs:text-xs text-pink-200/60 font-light">
                   <span className="flex items-center gap-1">
                     <Heart className="w-3.5 h-3.5 text-blush-400 fill-blush-400" />
-                    Wished from the bottom of my heart
+                    Wished from the heart
                   </span>
-                  <span className="text-pink-300">Tap anywhere to close</span>
+                  <span className="text-pink-300">Tap to close ✕</span>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
+
+        {/* Mobile Quick Wish Chips for Touch-Friendly Browsing */}
+        <div className="flex sm:hidden flex-wrap justify-center gap-2 mt-4 px-2">
+          {SKY_WISHES.map((w) => (
+            <button
+              key={w.id}
+              onClick={() => handleStarClick(w)}
+              className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${
+                activeWish?.id === w.id
+                  ? 'bg-blush-500 text-white border-blush-400'
+                  : 'bg-white/5 text-pink-200/80 border-pink-300/20 hover:bg-white/10'
+              }`}
+            >
+              {w.emoji} {w.title}
+            </button>
+          ))}
         </div>
       </div>
     </section>

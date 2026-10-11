@@ -48,7 +48,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onReplay }) => {
           scrolled ? 'opacity-100 translate-y-0' : 'opacity-95'
         }`}
       >
-        <div className="glass-panel rounded-full px-5 py-3 border border-pink-300/25 flex items-center justify-between backdrop-blur-xl shadow-xl shadow-black/20">
+        <div className="glass-panel rounded-full px-3.5 py-2 sm:px-5 sm:py-3 border border-pink-300/25 flex items-center justify-between backdrop-blur-xl shadow-xl shadow-black/20">
           {/* Logo / Brandmark */}
           <a
             href="#"
@@ -56,12 +56,12 @@ export const Navigation: React.FC<NavigationProps> = ({ onReplay }) => {
               e.preventDefault();
               scrollToTop();
             }}
-            className="flex items-center gap-2 group cursor-pointer"
+            className="flex items-center gap-1.5 xs:gap-2 group cursor-pointer"
           >
-            <span className="font-handwriting text-2xl sm:text-3xl font-bold text-pink-200 group-hover:text-blush-400 transition-colors">
+            <span className="font-handwriting text-xl xs:text-2xl sm:text-3xl font-bold text-pink-200 group-hover:text-blush-400 transition-colors">
               Popy
             </span>
-            <Heart className="w-4 h-4 text-blush-500 fill-blush-500 group-hover:scale-125 transition-transform" />
+            <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blush-500 fill-blush-500 group-hover:scale-125 transition-transform" />
           </a>
 
           {/* Desktop Nav Items */}
@@ -79,7 +79,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onReplay }) => {
           </div>
 
           {/* Right Action: Replay & Mobile Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={onReplay}
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium text-pink-200 bg-white/5 hover:bg-white/10 border border-pink-300/20 transition-all"
@@ -91,7 +91,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onReplay }) => {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="p-1.5 md:hidden rounded-full text-pink-200 hover:text-white hover:bg-white/10 transition-colors"
+              className="p-1.5 md:hidden rounded-full text-pink-200 hover:text-white hover:bg-white/10 transition-colors active:scale-95"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -107,26 +107,26 @@ export const Navigation: React.FC<NavigationProps> = ({ onReplay }) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="fixed top-20 inset-x-4 max-w-sm mx-auto glass-panel rounded-2xl p-4 border border-pink-300/30 shadow-2xl z-40 md:hidden"
+            className="fixed top-16 xs:top-20 inset-x-3 xs:inset-x-4 max-w-sm mx-auto glass-panel rounded-2xl p-4 border border-pink-300/30 shadow-2xl z-40 md:hidden"
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleScrollTo(e, link.href)}
-                  className="px-4 py-2.5 rounded-lg text-sm text-pink-100 hover:bg-white/10 font-medium transition-colors"
+                  className="px-4 py-2 rounded-lg text-sm text-pink-100 hover:bg-white/10 font-medium transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="pt-2 border-t border-pink-300/20 flex justify-between">
+              <div className="pt-2 border-t border-pink-300/20 flex justify-between items-center">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onReplay();
                   }}
-                  className="px-4 py-2 text-xs text-blush-300 font-medium hover:underline"
+                  className="px-3 py-1.5 text-xs text-blush-300 font-medium hover:underline"
                 >
                   Replay Opening Intro
                 </button>
@@ -135,7 +135,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onReplay }) => {
                     setMobileMenuOpen(false);
                     scrollToTop();
                   }}
-                  className="px-4 py-2 text-xs text-pink-200 font-medium"
+                  className="px-3 py-1.5 text-xs text-pink-200 font-medium bg-white/5 rounded-full"
                 >
                   Top ↑
                 </button>
@@ -145,14 +145,14 @@ export const Navigation: React.FC<NavigationProps> = ({ onReplay }) => {
         )}
       </AnimatePresence>
 
-      {/* Back to top floating pill (visible when scrolled) */}
+      {/* Back to top floating pill (positioned cleanly above music player on mobile) */}
       {scrolled && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-20 right-4 sm:right-6 p-2.5 rounded-full glass-panel border border-pink-300/25 text-pink-200 hover:text-white shadow-lg transition-all hover:scale-110 active:scale-95 z-30"
+          className="fixed bottom-16 sm:bottom-20 right-3.5 sm:right-6 p-2 sm:p-2.5 rounded-full glass-panel border border-pink-300/25 text-pink-200 hover:text-white shadow-lg transition-all hover:scale-110 active:scale-90 z-30"
           aria-label="Back to top"
         >
-          <ArrowUp className="w-4 h-4" />
+          <ArrowUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </button>
       )}
     </>

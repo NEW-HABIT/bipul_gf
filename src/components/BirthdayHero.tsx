@@ -75,12 +75,12 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-panel border border-pink-300/25 text-pink-200 text-sm sm:text-base font-medium tracking-widest uppercase mb-6 shadow-lg shadow-blush-500/10"
+          className="inline-flex items-center gap-1.5 xs:gap-2 px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-full glass-panel border border-pink-300/25 text-pink-200 text-xs sm:text-base font-medium tracking-widest uppercase mb-4 sm:mb-6 shadow-lg shadow-blush-500/10"
         >
-          <Sparkles className="w-4 h-4 text-blush-400 animate-spin-slow" />
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blush-400 animate-spin-slow" />
           <span>12 October 2026</span>
           <span className="w-1.5 h-1.5 rounded-full bg-blush-400 animate-ping" />
-          <Cake className="w-4 h-4 text-blush-400" />
+          <Cake className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blush-400" />
         </motion.div>
 
         {/* Greeting Headline */}
@@ -88,18 +88,18 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="font-serif text-2xl sm:text-3xl md:text-4xl text-rose-100 font-light tracking-wide mb-2"
+          className="font-serif text-xl xs:text-2xl sm:text-3xl md:text-4xl text-rose-100 font-light tracking-wide mb-1 sm:mb-2"
         >
           Happy Birthday,
         </motion.h2>
 
         {/* Big Handwritten Name with Letter Stagger & Shimmer */}
-        <div className="relative my-2 sm:my-4 flex items-center justify-center">
+        <div className="relative my-1 sm:my-4 flex items-center justify-center max-w-full overflow-hidden">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="flex items-center justify-center font-handwriting text-6xl sm:text-8xl md:text-9xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-blush-300 to-rose-200 text-glow drop-shadow-2xl"
+            className="flex items-center justify-center font-handwriting text-5xl xs:text-6xl sm:text-8xl md:text-9xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-blush-300 to-rose-200 text-glow drop-shadow-2xl"
           >
             {popyLetters.map((char, index) => (
               <motion.span
@@ -120,7 +120,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.5, type: 'spring' }}
-              className="inline-block ml-3 sm:ml-4 text-blush-400"
+              className="inline-block ml-2 xs:ml-3 sm:ml-4 text-blush-400 text-3xl xs:text-4xl sm:text-6xl"
             >
               💗
             </motion.span>
@@ -132,7 +132,7 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="font-serif italic text-lg sm:text-2xl md:text-3xl text-pink-100/90 font-light max-w-2xl mx-auto mt-4 mb-10 leading-relaxed px-4"
+          className="font-serif italic text-base xs:text-lg sm:text-2xl md:text-3xl text-pink-100/90 font-light max-w-2xl mx-auto mt-2 sm:mt-4 mb-8 sm:mb-10 leading-relaxed px-2 sm:px-4"
         >
           “A little universe, made just for you.”
         </motion.p>
@@ -142,11 +142,11 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto px-4"
+          className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 w-full sm:w-auto px-4 max-w-xs sm:max-w-none mx-auto"
         >
           <button
             onClick={onExplore}
-            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full text-base font-semibold text-white bg-gradient-to-r from-blush-500 via-rose-500 to-purple-600 shadow-xl shadow-blush-500/25 hover:shadow-blush-500/40 hover:scale-105 active:scale-95 transition-all duration-300"
+            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-blush-500 via-rose-500 to-purple-600 shadow-xl shadow-blush-500/25 hover:shadow-blush-500/40 hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <span>Explore Your Surprise</span>
             <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -154,10 +154,10 @@ export const BirthdayHero: React.FC<BirthdayHeroProps> = ({
 
           <button
             onClick={onPlayMusic}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full text-base font-medium text-pink-100 glass-panel border border-pink-300/30 hover:bg-white/10 hover:border-pink-300/50 hover:scale-105 active:scale-95 transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-medium text-pink-100 glass-panel border border-pink-300/30 hover:bg-white/10 hover:border-pink-300/50 hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <Music className={`w-4 h-4 text-blush-300 ${isMusicPlaying ? 'animate-bounce' : ''}`} />
-            <span>{isMusicPlaying ? 'Birthday Magic Playing ♫' : 'Play the Birthday Magic ♫'}</span>
+            <span>{isMusicPlaying ? 'Playing Birthday Magic ♫' : 'Play Birthday Magic ♫'}</span>
           </button>
         </motion.div>
       </div>

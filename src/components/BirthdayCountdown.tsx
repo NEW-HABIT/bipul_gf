@@ -53,11 +53,11 @@ export const BirthdayCountdown: React.FC = () => {
         </p>
 
         {/* Live IST Clock Indicator */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-midnight-800/80 border border-pink-400/20 text-xs sm:text-sm text-pink-200/70 mb-10 shadow-inner">
+        <div className="inline-flex flex-wrap items-center justify-center gap-1.5 xs:gap-2 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-midnight-800/80 border border-pink-400/20 text-[11px] xs:text-xs sm:text-sm text-pink-200/80 mb-8 sm:mb-10 shadow-inner max-w-full">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>India Standard Time (IST):</span>
-          <span className="font-mono text-pink-200 font-medium">{istTimeString}</span>
-          <span className="text-pink-300/40">|</span>
+          <span className="font-light">India Time (IST):</span>
+          <span className="font-mono text-pink-100 font-semibold">{istTimeString}</span>
+          <span className="hidden xs:inline text-pink-300/40">|</span>
           <span className="text-pink-200/70">{istDateString}</span>
         </div>
 
@@ -69,28 +69,28 @@ export const BirthdayCountdown: React.FC = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="glass-panel rounded-3xl p-8 sm:p-12 border border-pink-400/30 max-w-2xl mx-auto box-glow relative overflow-hidden"
+              className="glass-panel rounded-3xl p-6 sm:p-12 border border-pink-400/30 max-w-2xl mx-auto box-glow relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 -mr-8 -mt-8 w-40 h-40 bg-blush-500/20 rounded-full blur-2xl pointer-events-none" />
               <div className="absolute bottom-0 left-0 -ml-8 -mb-8 w-40 h-40 bg-purple-500/20 rounded-full blur-2xl pointer-events-none" />
 
               <div className="relative z-10 flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-blush-500 to-rose-400 flex items-center justify-center shadow-lg shadow-blush-500/40 mb-6 animate-bounce">
-                  <PartyPopper className="w-10 h-10 text-white" />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-blush-500 to-rose-400 flex items-center justify-center shadow-lg shadow-blush-500/40 mb-4 sm:mb-6 animate-bounce">
+                  <PartyPopper className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
 
-                <h3 className="font-handwriting text-4xl sm:text-5xl text-pink-200 font-bold text-glow mb-4">
+                <h3 className="font-handwriting text-3xl sm:text-5xl text-pink-200 font-bold text-glow mb-3">
                   Today is the Day! 🎈
                 </h3>
 
-                <p className="font-serif text-lg sm:text-xl text-cream-100 max-w-lg mx-auto leading-relaxed mb-6">
+                <p className="font-serif text-base sm:text-xl text-cream-100 max-w-lg mx-auto leading-relaxed mb-6">
                   The wait is over! Today we celebrate everything that makes you unique, radiant, and wonderful.
                 </p>
 
-                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blush-500/20 text-blush-200 text-sm font-medium border border-blush-400/30">
-                  <Sparkles className="w-4 h-4 text-yellow-300" />
-                  <span>12 October 2026 — Officially Popy&apos;s Special Day!</span>
-                  <Heart className="w-4 h-4 text-blush-400 fill-blush-400" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blush-500/20 text-blush-200 text-xs sm:text-sm font-medium border border-blush-400/30">
+                  <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
+                  <span>12 October 2026 — Popy&apos;s Day!</span>
+                  <Heart className="w-3.5 h-3.5 text-blush-400 fill-blush-400" />
                 </div>
               </div>
             </motion.div>
@@ -100,25 +100,25 @@ export const BirthdayCountdown: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-3xl mx-auto"
             >
               {timeUnits.map((unit, index) => (
                 <div
                   key={unit.label}
-                  className="group relative glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-pink-300/20 hover:border-pink-300/40 transition-all duration-300 hover:scale-105 hover:box-glow"
+                  className="group relative glass-panel rounded-2xl sm:rounded-3xl p-4 xs:p-5 sm:p-7 border border-pink-300/20 hover:border-pink-300/40 transition-all duration-300 hover:scale-105 hover:box-glow"
                 >
                   {/* Subtle top indicator */}
-                  <div className="absolute top-3 right-3 text-pink-300/20 group-hover:text-pink-300/60 transition-colors">
-                    <Sparkles className="w-3.5 h-3.5" />
+                  <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-pink-300/20 group-hover:text-pink-300/60 transition-colors">
+                    <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   </div>
 
                   {/* Animated Number */}
-                  <div className="font-mono text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-pink-100 to-blush-200 text-glow my-1 tracking-tight">
+                  <div className="font-mono text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-pink-100 to-blush-200 text-glow my-0.5 sm:my-1 tracking-tight">
                     {String(unit.value).padStart(2, '0')}
                   </div>
 
                   {/* Unit Label */}
-                  <div className="text-xs sm:text-sm font-medium uppercase tracking-widest text-pink-200/70 group-hover:text-pink-100 transition-colors">
+                  <div className="text-[11px] xs:text-xs sm:text-sm font-medium uppercase tracking-widest text-pink-200/70 group-hover:text-pink-100 transition-colors">
                     {unit.label}
                   </div>
                 </div>

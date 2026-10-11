@@ -131,10 +131,10 @@ export const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
             e.stopPropagation();
             handlePrev();
           }}
-          className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/25 text-white backdrop-blur-md border border-white/20 transition-all z-20 hover:scale-110 active:scale-95"
+          className="absolute left-1 xs:left-2 sm:left-6 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 transition-all z-20 active:scale-90"
           aria-label="Previous Photo"
         >
-          <ChevronLeft className="w-6 h-6 text-white" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </button>
 
         {/* Next Button */}
@@ -143,15 +143,15 @@ export const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
             e.stopPropagation();
             handleNext();
           }}
-          className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/25 text-white backdrop-blur-md border border-white/20 transition-all z-20 hover:scale-110 active:scale-95"
+          className="absolute right-1 xs:right-2 sm:right-6 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 transition-all z-20 active:scale-90"
           aria-label="Next Photo"
         >
-          <ChevronRight className="w-6 h-6 text-white" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </button>
 
         {/* Center Polaroid Showcase */}
         <div
-          className="relative max-w-xl max-h-[85vh] w-full flex flex-col items-center justify-center p-2"
+          className="relative max-w-lg max-h-[88vh] w-full flex flex-col items-center justify-center p-1 sm:p-2"
           onClick={(e) => e.stopPropagation()}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
@@ -162,10 +162,10 @@ export const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: -15 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
-            className="polaroid-card w-full max-w-md bg-white rounded-xl shadow-2xl p-4 sm:p-5 flex flex-col items-center"
+            className="polaroid-card w-full max-w-[340px] xs:max-w-sm sm:max-w-md bg-white rounded-xl shadow-2xl p-3 xs:p-4 sm:p-5 flex flex-col items-center"
           >
-            {/* Image Frame */}
-            <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
+            {/* Image Frame with responsive max-height */}
+            <div className="relative w-full max-h-[50vh] sm:max-h-[58vh] aspect-[4/5] sm:aspect-[3/4] overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
               <img
                 src={activePhoto.src}
                 alt={activePhoto.title}
@@ -175,11 +175,11 @@ export const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
             </div>
 
             {/* Caption & Title */}
-            <div className="w-full mt-4 text-center">
-              <h3 className="font-handwriting text-2xl sm:text-3xl text-gray-800 font-bold tracking-wide">
+            <div className="w-full mt-3 sm:mt-4 text-center">
+              <h3 className="font-handwriting text-xl xs:text-2xl sm:text-3xl text-gray-800 font-bold tracking-wide">
                 {activePhoto.title}
               </h3>
-              <p className="font-serif italic text-xs sm:text-sm text-gray-500 mt-1 max-w-sm mx-auto">
+              <p className="font-serif italic text-[11px] xs:text-xs sm:text-sm text-gray-500 mt-0.5 sm:mt-1 max-w-sm mx-auto">
                 {activePhoto.caption}
               </p>
             </div>
